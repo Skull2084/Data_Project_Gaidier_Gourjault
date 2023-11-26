@@ -113,30 +113,7 @@ t_test_p_value = stats.ttest_ind(hommes['Age'], femmes['Age'], equal_var=True).p
 gold_medals = Athletes[Athletes['Medal'].isin(['Gold', 'Silver', 'Bronze'])]
 
 # ANALYSE DES DONNEES
-# Tests à effectuer sur toutes les variables aléatoires en remplaçant les noms dans les formules
 # Représentation graphique des médaillés d'or, d'argent et de bronze
 # relancer le plot plus haut pour âge général
 
-# Test de chi², distribution normale ?
-observed = np.histogram(Athletes['Age'], bins=range(0, 101, 1))[0]
-mu, sigma = norm.fit(Athletes['Age'])
-expected = len(Athletes) * norm.pdf(np.arange(0.5, 100.5, 1), mu, sigma)
-chi2_test_result = stats.chisquare(observed, f_exp=expected)
-
-# Test Anderson et Kolmogorov
-anderson_test_result = stats.anderson(Athletes['Age'], dist='norm')
-ks_test_result = stats.kstest(Athletes['Age'], 'norm', args=(mu, sigma))
-
-# rapport des quantiles
-q = np.quantile(Athletes['Age'], np.arange(0.01, 1, 0.01))
-expected_q = norm.ppf(np.arange(0.01, 1, 0.01), mu, sigma)
-quantile_table = pd.DataFrame({'Quantile': q, 'Expected': expected_q})
-
-# Intervalle de confiance
-ic_low, ic_high = stats.t.interval(0.95, len(Athletes['Age']) - 1, loc=np.mean(Athletes['Age']), scale=stats.sem(Athletes['Age']))
-
-# Proportion d'athlètes par tranche d'âge
-age_groups = pd.cut(Athletes['Age'], bins=range(0, 101, 5))
-athletes_by_age = age_groups.value_counts(normalize=True).sort_index() * 100
-medals_by_age = pd.cut(medals['Age'], bins=range(0, 101, 5)).value_counts(normalize=True).sort_index() * 100
 
