@@ -96,24 +96,4 @@ plt.title('Moyenne de poids des athlètes aux JO par année')
 plt.legend()
 plt.show()
 
-# TESTS DE COHERENCE
-hommes = Athletes[Athletes['Sex'] == 'M']
-femmes = Athletes[Athletes['Sex'] == 'F']
-
-# Test de cohérence sur les variances de l'âge des hommes et des femmes
-var_hommes = hommes['Age'].var()
-var_femmes = femmes['Age'].var()
-
-# Test de cohérence sur les moyennes de l'âge des hommes et des femmes
-t_test_result = np.array([np.mean(hommes['Age']), np.mean(femmes['Age'])])
-t_test_p_value = stats.ttest_ind(hommes['Age'], femmes['Age'], equal_var=True).pvalue
-
-# QUESTION CENTRALE ET HYPOTHESES
-# Différentes variables aléatoires étudiées
-gold_medals = Athletes[Athletes['Medal'].isin(['Gold', 'Silver', 'Bronze'])]
-
-# ANALYSE DES DONNEES
-# Représentation graphique des médaillés d'or, d'argent et de bronze
-# relancer le plot plus haut pour âge général
-
 
