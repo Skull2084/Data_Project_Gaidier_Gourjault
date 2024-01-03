@@ -6,6 +6,8 @@ Code : Python_Project_Data .ipynb
 
 Database : athlete_events.csv 
 
+Database cleaning code : clean.py
+
 DONT FORGET TO CHANGE THE LOCATION OF THE DATABASE IN THE CODE !
 
 This project's objective is to be able to predict the chances of a new athlete to winning a medal at the Olympics
