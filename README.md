@@ -2,6 +2,9 @@
 
 Data project : predicting Olympics Medals with Machine Learning
 
+Code : Python_Project_Data .ipynb
+Database : athlete_events.csv
+
 This project's objective is to be able to predict the chances of a new athlete to winning a medal at the Olympics
 
 We are going to use the following database : https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results, and separate it between a learning part and a testing part.
