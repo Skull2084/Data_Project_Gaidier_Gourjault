@@ -6,7 +6,7 @@ Code : Python_Project_Data .ipynb
 
 Database : athlete_events.csv 
 
-Database cleaning code : clean.py
+Database cleaning code : clean_database.py
 
 DONT FORGET TO CHANGE THE LOCATION OF THE DATABASE IN THE CODE !
 
